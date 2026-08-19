@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard | QueueLess</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" style="background: var(--dark); border-bottom: none;">
+    <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+      <div class="logo" style="color: white;">
+        <i class="fa-solid fa-layer-group" style="color: var(--secondary);"></i> Queue<span style="color: white;">Less</span> <span class="badge" style="background: rgba(255,255,255,0.2); font-size: 0.75rem; margin-left: 0.5rem;">STAFF</span>
+      </div>
+      <div class="nav-links" style="color: white;">
+        <span style="opacity: 0.8;">Certificate Office (Counter 2)</span>
+        <div style="display: flex; align-items: center; gap: 0.75rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; margin-left: 0.5rem;">
+          <i class="fa-solid fa-user-tie"></i>
+          <span style="font-weight: 500;">Operator 1</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout" style="background: #F1F5F9; padding: 2rem;">
+    
+    <div style="display: grid; grid-template-columns: 1fr 350px; gap: 2rem; max-width: 1400px; margin: 0 auto; width: 100%;">
+      
+      <!-- Left Column: Main Queue Controls -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h1 style="font-size: 1.75rem; color: var(--dark);">Queue Manager</h1>
+          <div style="display: flex; gap: 1rem;">
+            <button class="btn btn-outline" style="background: white;"><i class="fa-solid fa-pause"></i> Pause Queue</button>
+          </div>
+        </div>
+
+        <div class="glass-card" style="background: white; border: 1px solid var(--border); margin-bottom: 2rem; text-align: center; padding: 3rem;">
+          <h2 class="text-muted" style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 1rem;">Currently Serving</h2>
+          <h1 style="font-size: 5rem; color: var(--primary); font-weight: 800; line-height: 1; margin-bottom: 2rem;">CERT-035</h1>
+          
+          <div style="display: flex; justify-content: center; gap: 1.5rem;">
+            <button class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.1rem;"><i class="fa-solid fa-check-double"></i> Mark Completed</button>
+            <button class="btn btn-outline btn-danger" style="border-color: var(--danger); color: var(--danger); padding: 1rem 2rem; font-size: 1.1rem;"><i class="fa-solid fa-user-xmark"></i> No Show (Skip)</button>
+          </div>
+        </div>
+
+        <!-- Next in Line Display -->
+        <div class="glass-card" style="background: white; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3 class="text-muted" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Up Next</h3>
+            <p style="font-size: 2rem; font-weight: 700; color: var(--dark);">CERT-036</p>
+            <p class="text-muted" style="font-size: 0.875rem;"><i class="fa-solid fa-user"></i> Student: John Doe (ID: 123456)</p>
+          </div>
+          <button class="btn btn-primary" style="padding: 1.5rem 3rem; font-size: 1.25rem;"><i class="fa-solid fa-bullhorn"></i> CALL NEXT</button>
+        </div>
+      </div>
+
+      <!-- Right Column: Stats & List -->
+      <div>
+        <div class="grid-2" style="gap: 1rem; margin-bottom: 2rem;">
+          <div class="glass-card" style="background: white; padding: 1.5rem; text-align: center;">
+            <h3 class="text-muted" style="font-size: 0.875rem;">Waiting</h3>
+            <p style="font-size: 2.5rem; font-weight: 700; color: var(--warning);">12</p>
+          </div>
+          <div class="glass-card" style="background: white; padding: 1.5rem; text-align: center;">
+            <h3 class="text-muted" style="font-size: 0.875rem;">Served Today</h3>
+            <p style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">34</p>
+          </div>
+        </div>
+
+        <div class="glass-card" style="background: white; border: 1px solid var(--border); padding: 0;">
+          <div style="padding: 1.5rem; border-bottom: 1px solid var(--border); background: #F8FAFC; border-radius: var(--radius) var(--radius) 0 0;">
+            <h3 style="color: var(--dark); font-size: 1.1rem;">Waiting List</h3>
+          </div>
+          
+          <div style="max-height: 400px; overflow-y: auto;">
+            <!-- List Item -->
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <p style="font-weight: 700; color: var(--dark);">CERT-036</p>
+                <p class="text-muted" style="font-size: 0.75rem;">Waiting: 15 mins</p>
+              </div>
+              <span class="badge badge-warning">NEXT</span>
+            </div>
+            
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <p style="font-weight: 700; color: var(--dark);">CERT-037</p>
+                <p class="text-muted" style="font-size: 0.75rem;">Waiting: 12 mins</p>
+              </div>
+            </div>
+
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <p style="font-weight: 700; color: var(--dark);">CERT-038</p>
+                <p class="text-muted" style="font-size: 0.75rem;">Waiting: 8 mins</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

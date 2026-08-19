@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | QueueLess</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+      <div class="logo">
+        <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> Queue<span>Less</span>
+      </div>
+      <div class="nav-links">
+        <div style="display: flex; align-items: center; gap: 0.75rem; border-left: 1px solid var(--border); padding-left: 1.5rem; margin-left: 0.5rem;">
+          <img src="https://ui-avatars.com/api/?name=John+Doe&background=EEF2FF&color=4F46E5" alt="Profile" style="border-radius: 50%; width: 35px; height: 35px;">
+          <span style="font-weight: 500;">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="services.html" class="sidebar-link active">
+          <i class="fa-solid fa-building"></i> Services
+        </a>
+        <a href="queue.html" class="sidebar-link">
+          <i class="fa-solid fa-ticket"></i> My Queues
+        </a>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-user"></i> Profile
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h1 style="font-size: 1.75rem; color: var(--dark);">Available Services</h1>
+          <p class="text-muted">Select a service to join the virtual queue.</p>
+        </div>
+        <div style="position: relative;">
+          <i class="fa-solid fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+          <input type="text" class="form-control" placeholder="Search services..." style="padding-left: 2.5rem; width: 300px;">
+        </div>
+      </div>
+
+      <div class="grid-cards">
+        <!-- Service Card 1 -->
+        <div class="glass-card" style="padding: 1.5rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+              <i class="fa-solid fa-file-contract"></i>
+            </div>
+            <span class="badge badge-success">OPEN</span>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Certificate Office</h3>
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1rem; flex-grow: 1;">Get your official transcripts, degree certificates, and provisional documents.</p>
+          
+          <div style="background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius); margin-bottom: 1.5rem; font-size: 0.875rem; display: flex; justify-content: space-between;">
+            <span class="text-muted">Est. Wait Time:</span>
+            <span style="font-weight: 600; color: var(--warning);">15 mins</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%;" onclick="alert('Join Queue Modal would open here')">Join Queue</button>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="glass-card" style="padding: 1.5rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="width: 50px; height: 50px; background: var(--secondary-light); color: var(--secondary); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+            <span class="badge badge-success">OPEN</span>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Accounts Section</h3>
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1rem; flex-grow: 1;">Fee payments, scholarships, and financial inquiries.</p>
+          
+          <div style="background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius); margin-bottom: 1.5rem; font-size: 0.875rem; display: flex; justify-content: space-between;">
+            <span class="text-muted">Est. Wait Time:</span>
+            <span style="font-weight: 600; color: var(--warning);">35 mins</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%;">Join Queue</button>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="glass-card" style="padding: 1.5rem; display: flex; flex-direction: column; opacity: 0.7;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="width: 50px; height: 50px; background: var(--text-light); color: var(--text-muted); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+              <i class="fa-solid fa-laptop-medical"></i>
+            </div>
+            <span class="badge badge-danger">CLOSED</span>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--dark);">IT Help Desk</h3>
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1rem; flex-grow: 1;">Wi-Fi issues, student portal access, and software installation.</p>
+          
+          <div style="background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius); margin-bottom: 1.5rem; font-size: 0.875rem; display: flex; justify-content: space-between;">
+            <span class="text-muted">Est. Wait Time:</span>
+            <span style="font-weight: 600;">--</span>
+          </div>
+
+          <button class="btn btn-secondary" style="width: 100%;" disabled>Currently Closed</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

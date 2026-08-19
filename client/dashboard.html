@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | QueueLess</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+      <div class="logo">
+        <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> Queue<span>Less</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" style="position: relative;">
+          <i class="fa-solid fa-bell" style="font-size: 1.25rem;"></i>
+          <span style="position: absolute; top: -5px; right: -8px; background: var(--danger); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</span>
+        </a>
+        <div style="display: flex; align-items: center; gap: 0.75rem; border-left: 1px solid var(--border); padding-left: 1.5rem; margin-left: 0.5rem;">
+          <img src="https://ui-avatars.com/api/?name=John+Doe&background=EEF2FF&color=4F46E5" alt="Profile" style="border-radius: 50%; width: 35px; height: 35px;">
+          <span style="font-weight: 500;">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-link active">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="services.html" class="sidebar-link">
+          <i class="fa-solid fa-building"></i> Services
+        </a>
+        <a href="queue.html" class="sidebar-link">
+          <i class="fa-solid fa-ticket"></i> My Queues
+        </a>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-user"></i> Profile
+        </a>
+        <a href="#" class="sidebar-link" id="logoutBtn" style="margin-top: auto; color: var(--danger);">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <div style="margin-bottom: 2rem;">
+        <h1 style="font-size: 1.75rem; color: var(--dark);">Welcome back, John! 👋</h1>
+        <p class="text-muted">Here is your current queue status.</p>
+      </div>
+
+      <!-- Active Queue Alert (If waiting) -->
+      <div class="glass-card mb-4" style="border-left: 4px solid var(--primary); display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <span class="badge badge-warning mb-1">WAITING</span>
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Certificate Office</h2>
+          <p class="text-muted"><i class="fa-solid fa-location-dot"></i> Block A, Ground Floor, Counter 2</p>
+        </div>
+        <div style="text-align: right;">
+          <a href="queue.html" class="btn btn-primary">View Live Status</a>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid-cards mb-4">
+        <div class="stat-card">
+          <div class="stat-icon icon-blue">
+            <i class="fa-solid fa-ticket"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Your Token</h3>
+            <p>CERT-042</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-yellow">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="stat-details">
+            <h3>People Ahead</h3>
+            <p>6</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-red">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Est. Wait Time</h3>
+            <p>18 min</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent History -->
+      <div>
+        <h3 class="mb-2" style="color: var(--dark);">Recent History</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Token</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IT Help Desk</td>
+                <td>IT-105</td>
+                <td>Oct 24, 2026</td>
+                <td><span class="badge badge-success">COMPLETED</span></td>
+              </tr>
+              <tr>
+                <td>Library</td>
+                <td>LIB-012</td>
+                <td>Oct 22, 2026</td>
+                <td><span class="badge badge-danger">CANCELLED</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

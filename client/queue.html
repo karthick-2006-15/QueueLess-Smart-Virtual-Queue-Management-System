@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Queue Tracking | QueueLess</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .tracking-pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+      <div class="logo">
+        <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> Queue<span>Less</span>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Back to Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 100px;">
+    
+    <div class="glass-card fade-in" style="width: 100%; max-width: 600px; text-align: center; position: relative; overflow: hidden;">
+      
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--warning);" class="tracking-pulse"></div>
+
+      <div style="margin-bottom: 2rem; margin-top: 1rem;">
+        <span class="badge badge-warning mb-2" style="font-size: 1rem; padding: 0.5rem 1rem;">LIVE TRACKING</span>
+        <h1 style="color: var(--dark); font-size: 2rem;">Certificate Office</h1>
+        <p class="text-muted"><i class="fa-solid fa-location-dot"></i> Counter 2</p>
+      </div>
+
+      <div class="queue-display" style="background: var(--bg-main); border-radius: var(--radius-lg); margin-bottom: 2rem;">
+        <p class="text-muted" style="font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Your Token</p>
+        <h1>CERT-042</h1>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; padding: 0.5rem 1rem; border-radius: 99px; box-shadow: var(--shadow-sm); font-weight: 600; color: var(--dark);">
+          <div style="width: 10px; height: 10px; background: var(--secondary); border-radius: 50%;"></div>
+          Status: WAITING
+        </div>
+      </div>
+
+      <div class="grid-2 mb-4">
+        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius);">
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.5rem;">Now Serving</p>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--dark);">CERT-035</p>
+        </div>
+        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius);">
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.5rem;">People Ahead</p>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--warning);">6</p>
+        </div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--primary-light); border-radius: var(--radius); margin-bottom: 2rem; text-align: left; display: flex; gap: 1rem; align-items: center;">
+        <div style="font-size: 2rem; color: var(--primary);">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <div>
+          <p style="color: var(--primary-hover); font-weight: 600;">Estimated Wait Time</p>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">~18 Minutes</p>
+        </div>
+      </div>
+
+      <button class="btn btn-outline btn-danger" style="width: 100%; border-color: var(--danger); color: var(--danger);">
+        Cancel Queue Request
+      </button>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

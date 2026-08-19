@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | QueueLess</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" style="background: var(--dark); border-bottom: none;">
+    <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+      <div class="logo" style="color: white;">
+        <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> Queue<span style="color: white;">Less</span> <span class="badge" style="background: var(--danger); font-size: 0.75rem; margin-left: 0.5rem;">ADMIN</span>
+      </div>
+      <div class="nav-links" style="color: white;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; margin-left: 0.5rem;">
+          <i class="fa-solid fa-user-shield"></i>
+          <span style="font-weight: 500;">System Admin</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-menu">
+        <a href="admin.html" class="sidebar-link active">
+          <i class="fa-solid fa-chart-line"></i> Dashboard
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fa-solid fa-building"></i> Manage Services
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fa-solid fa-users"></i> Users & Staff
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fa-solid fa-chart-pie"></i> Reports
+        </a>
+        <a href="#" class="sidebar-link" style="margin-top: auto; color: var(--danger);">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1 style="font-size: 1.75rem; color: var(--dark);">System Overview</h1>
+          <p class="text-muted">Real-time statistics across all services.</p>
+        </div>
+        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add New Service</button>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid-cards mb-4">
+        <div class="stat-card">
+          <div class="stat-icon icon-blue">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Total Users</h3>
+            <p>1,245</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-yellow">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Currently Waiting</h3>
+            <p>42</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-green">
+            <i class="fa-solid fa-check-to-slot"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Completed Today</h3>
+            <p>156</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-red">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="stat-details">
+            <h3>Avg. Wait Time</h3>
+            <p>24m</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Status Table -->
+      <div>
+        <h3 class="mb-2" style="color: var(--dark);">Active Services Status</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Service Name</th>
+                <th>Counter</th>
+                <th>Status</th>
+                <th>Waiting</th>
+                <th>Avg Time</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Certificate Office</td>
+                <td>Counter 2</td>
+                <td><span class="badge badge-success">OPEN</span></td>
+                <td>12</td>
+                <td>15 min</td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Accounts Section</td>
+                <td>Counter 1</td>
+                <td><span class="badge badge-success">OPEN</span></td>
+                <td>25</td>
+                <td>35 min</td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>IT Help Desk</td>
+                <td>Room 101</td>
+                <td><span class="badge badge-danger">CLOSED</span></td>
+                <td>0</td>
+                <td>--</td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
