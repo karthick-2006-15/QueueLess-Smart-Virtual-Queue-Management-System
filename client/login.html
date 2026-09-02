@@ -54,7 +54,10 @@
 
         <div class="form-group">
           <label class="form-label" for="password">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          <div style="position: relative;">
+            <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+            <i class="fa-regular fa-eye toggle-password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+          </div>
         </div>
 
         <div class="form-group" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem;">
