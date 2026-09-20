@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "dev:all": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +28,7 @@
     "socket.io": "^4.8.3"
   },
   "devDependencies": {
+    "concurrently": "^10.0.5",
     "nodemon": "^3.1.14"
   }
 }

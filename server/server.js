@@ -39,10 +39,12 @@ if (process.env.NODE_ENV === 'development') {
 
 const authRouter = require('./routes/authRoutes');
 const serviceRouter = require('./routes/serviceRoutes');
+const queueRouter = require('./routes/queueRoutes');
 
 // Routes (will be populated in next phases)
 app.use('/api/auth', authRouter);
 app.use('/api/services', serviceRouter);
+app.use('/api/queues', queueRouter);
 
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, message: 'Server is running properly' });
@@ -59,10 +61,20 @@ app.use(globalErrorHandler);
 
 // Socket.io connection handling
 io.on('connection', (socket) => {
-  console.log('New client connected:', socket.id);
+  console.log('⚡ Client connected to Socket.IO:', socket.id);
+
+  // Relay queue events to all connected clients
+  socket.on('joinQueue', (data) => {
+    socket.broadcast.emit('queueUpdated', { newTicket: data });
+  });
+
+  socket.on('tokenCalled', (data) => {
+    io.emit('tokenCalled', data);
+    io.emit('queueUpdated', { calledTicket: data });
+  });
 
   socket.on('disconnect', () => {
-    console.log('Client disconnected:', socket.id);
+    console.log('Client disconnected from Socket.IO:', socket.id);
   });
 });
 
