@@ -141,7 +141,102 @@ const LoginPage = () => {
             </button>
           </form>
 
-          <div style={{ textAlign: 'center', marginTop: '1.75rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+          {/* Quick Demo Role Switcher for Presentations / Viva */}
+          <div
+            style={{
+              marginTop: '1.75rem',
+              padding: '1.25rem',
+              background: 'var(--bg-main)',
+              borderRadius: 'var(--radius)',
+              border: '1px dashed var(--border)',
+            }}
+          >
+            <p
+              style={{
+                fontSize: '0.8rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                color: 'var(--text-muted)',
+                marginBottom: '0.75rem',
+                textAlign: 'center',
+              }}
+            >
+              ⚡ Quick Demo Logins (Presentation Mode)
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
+              <button
+                type="button"
+                className="btn"
+                style={{
+                  background: 'var(--primary-light)',
+                  color: 'var(--primary)',
+                  fontSize: '0.8rem',
+                  padding: '0.5rem 0.25rem',
+                  fontWeight: 600,
+                }}
+                onClick={() => {
+                  setFormData({ email: 'student@queueless.com', password: 'student123' });
+                  login('student@queueless.com', 'student123')
+                    .then(() => {
+                      toast.success('Logged in as Student!');
+                      navigate('/dashboard');
+                    })
+                    .catch((err) => toast.error(err.message));
+                }}
+              >
+                🎓 Student
+              </button>
+
+              <button
+                type="button"
+                className="btn"
+                style={{
+                  background: 'var(--warning-light)',
+                  color: 'var(--warning)',
+                  fontSize: '0.8rem',
+                  padding: '0.5rem 0.25rem',
+                  fontWeight: 600,
+                }}
+                onClick={() => {
+                  setFormData({ email: 'staff@queueless.com', password: 'staff123' });
+                  login('staff@queueless.com', 'staff123')
+                    .then(() => {
+                      toast.success('Logged in as Staff Operator!');
+                      navigate('/staff');
+                    })
+                    .catch((err) => toast.error(err.message));
+                }}
+              >
+                🎧 Staff
+              </button>
+
+              <button
+                type="button"
+                className="btn"
+                style={{
+                  background: 'var(--danger-light)',
+                  color: 'var(--danger)',
+                  fontSize: '0.8rem',
+                  padding: '0.5rem 0.25rem',
+                  fontWeight: 600,
+                }}
+                onClick={() => {
+                  setFormData({ email: 'admin@queueless.com', password: 'admin123' });
+                  login('admin@queueless.com', 'admin123')
+                    .then(() => {
+                      toast.success('Logged in as Admin!');
+                      navigate('/admin');
+                    })
+                    .catch((err) => toast.error(err.message));
+                }}
+              >
+                👑 Admin
+              </button>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
             Don't have an account yet?{' '}
             <Link to="/register" style={{ fontWeight: 600 }}>
               Create Account

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Service = require('../models/Service');
+const User = require('../models/User');
 
 const connectDB = async () => {
   try {
@@ -57,6 +58,46 @@ const connectDB = async () => {
         },
       ]);
       console.log('✅ Pre-seeded 5 default campus services into MongoDB.');
+    }
+
+    // Seed default users for Admin, Staff, and Student
+    const adminExists = await User.findOne({ email: 'admin@queueless.com' });
+    if (!adminExists) {
+      await User.create({
+        name: 'System Administrator',
+        email: 'admin@queueless.com',
+        studentId: 'ADM-001',
+        phone: '+91 98765 00001',
+        password: 'admin123',
+        role: 'ADMIN',
+      });
+      console.log('✅ Seeded Admin: admin@queueless.com / admin123');
+    }
+
+    const staffExists = await User.findOne({ email: 'staff@queueless.com' });
+    if (!staffExists) {
+      await User.create({
+        name: 'Desk Operator 1',
+        email: 'staff@queueless.com',
+        studentId: 'STF-001',
+        phone: '+91 98765 00002',
+        password: 'staff123',
+        role: 'STAFF',
+      });
+      console.log('✅ Seeded Staff: staff@queueless.com / staff123');
+    }
+
+    const studentExists = await User.findOne({ email: 'student@queueless.com' });
+    if (!studentExists) {
+      await User.create({
+        name: 'Karthick R (Student)',
+        email: 'student@queueless.com',
+        studentId: '2024-CSE-01',
+        phone: '+91 98765 43210',
+        password: 'student123',
+        role: 'USER',
+      });
+      console.log('✅ Seeded Student: student@queueless.com / student123');
     }
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`);
